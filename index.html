@@ -12,23 +12,59 @@
     <div id="app">
         <div id="MainContent" class=" page-width" >
             
-            <h1>Learning, Vue :)</h1>
-            
-            <!-- v-if -->
-            <p v-if="showBooks">{{ title }} - {{ author }} - {{ age }}</p>
-            
-            <!-- v-on:click="do stuff" -->
-            <div class="button-wrap">
-                <button v-on:click="age++">Increase Age</button>
-                <button v-on:click="age--">Decrease Age</button>
+            <!-- Episode #1 + Episode #2 -->
+            <div class="container">
+                <h1>Learning, Vue :)</h1>
+                <h2>Episode 2</h2>
+                
+                <!-- v-if -->
+                <p v-if="showBooks">{{ title }} - {{ author }} - {{ age }}</p>
+                
+                <!-- v-on:click="do stuff" -->
+                <div class="button-wrap">
+                    <button v-on:click="age++">Increase Age</button>
+                    <button v-on:click="age--">Decrease Age</button>
+                </div>
+                
+                <!-- @click -->
+                <div class="button" @click="changeTitle('Oath Bringer')">Change book title</div>
+                <div class="button" @click="toggleShowBooks">{{ showBooksLabel }}</div>
+                
+                <!-- v-show -->
+                <div v-show="showBooks">Content Shown/Hidden using v-show</div>
             </div>
             
-            <!-- @click -->
-            <div class="button" @click="changeTitle('Oath Bringer')">Change book title</div>
-            <div class="button" @click="toggleShowBooks">{{ showBooksLabel }}</div>
-            
-            <!-- v-show -->
-            <div v-show="showBooks">Content Shown/Hidden using v-show</div>
+            <!-- Episode #3 -->
+            <div class="container">
+                
+                <h2>Episode 3</h2>
+                
+                <!-- Events with Methods -->
+                <div class="box-container">
+                    
+                    <div class="box" @mouseover="handleEvent($event, 5)">mouseover (enter)</div>
+                    <div class="box" @mouseleave="handleEvent">mouseleave</div>
+                    <div class="box" @dblclick="handleEvent">double click</div>
+                    <div class="box" @mousemove="handleMouseMove($event)">mousemove - {{ x }},{{ y }}</div>
+                    
+                </div>
+                
+                
+                <!-- Attribute Binding v-bind -->
+                <!-- <a v-bind:href="url">My Website</a> -->
+                <a :href="url">My Website</a>
+                
+                
+                <!-- v-for -->
+                <ul class="books-container" v-if="showBooks">
+                    <li v-for="book in books" @click="toggleFav(book)" class="book" :class="{ fav: book.isFav }">
+                        <img :src="book.img" :alt="book.title">
+                        <h4>{{ book.title }}</h4>
+                        <p>{{ book.author }}</p>
+                    </li>
+                </ul>
+                
+            </div>
             
         </div>
     </div>

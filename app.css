@@ -8,7 +8,8 @@
     padding: 50px 0 100px;
 }
 
-#MainContent {
+#MainContent, 
+.container {
     display: flex; 
     align-items: flex-start;
     justify-content: flex-start;
@@ -55,3 +56,48 @@ button, .button {
     border: none; 
     outline: none;
 }
+
+/* Episode 3 */
+
+.box-container {
+    display: flex; 
+    flex-flow: row wrap; 
+    gap: 30px;
+}
+
+.box {
+    padding: 100px 0;
+    width: 400px; 
+    text-align: center;
+    background: #ddd;
+    display: inline-block;
+    border-radius: 8px;
+}
+
+.books-container {
+    display: flex; 
+    align-items: center;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    gap: 20px;
+}
+
+/* Books */
+.book {
+    cursor: pointer;
+    width: 200px;
+    display: flex; 
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px; 
+    
+    padding: 20px;
+    background: #ddd;
+    border: solid 4px #b7b7b7;
+    border-radius: 8px;
+}
+
+.book.fav { background: #c7f1ff; border-color: #add8e6; }
+
+.book img { width: 150px; aspect-ratio: 11 / 16; object-fit: cover; border-radius: 4px;  }
