@@ -8,16 +8,29 @@
     <link rel="stylesheet" href="app.css">
 </head>
 <body>
-    <h1>Learning, Vue :)</h1>
-
+    
     <div id="app">
-        <p>{{ title }} - {{ author }} - {{ age }}</p>
-        
-        <button v-on:click="age++">Increase Age</button>
-        <button v-on:click="age--">Decrease Age</button>
-        <br>
-        
-        <div @click="changeTitle('Oath Bringer')">Change book title</div>
+        <div id="MainContent" class=" page-width" >
+            
+            <h1>Learning, Vue :)</h1>
+            
+            <!-- v-if -->
+            <p v-if="showBooks">{{ title }} - {{ author }} - {{ age }}</p>
+            
+            <!-- v-on:click="do stuff" -->
+            <div class="button-wrap">
+                <button v-on:click="age++">Increase Age</button>
+                <button v-on:click="age--">Decrease Age</button>
+            </div>
+            
+            <!-- @click -->
+            <div class="button" @click="changeTitle('Oath Bringer')">Change book title</div>
+            <div class="button" @click="toggleShowBooks">{{ showBooksLabel }}</div>
+            
+            <!-- v-show -->
+            <div v-show="showBooks">Content Shown/Hidden using v-show</div>
+            
+        </div>
     </div>
 
     <script src="app.js"></script>
