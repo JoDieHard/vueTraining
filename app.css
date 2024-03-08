@@ -1,0 +1,21 @@
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+button {
+    appearance: none; 
+    padding: 10px 15px;
+    border-radius: 6px; 
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    flex-flow: row nowrap;
+    
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+    background: #0a0a0a;
+    border: none; 
+    outline: none;
+}
